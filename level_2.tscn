@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjxtnthu8xp1j"]
+
+[ext_resource type="PackedScene" uid="uid://bk3aok2h6le51" path="res://goal.tscn" id="1_xdadj"]
+[ext_resource type="PackedScene" uid="uid://mytww0o8y1hy" path="res://spikes.tscn" id="2_1y8me"]
+[ext_resource type="PackedScene" uid="uid://cfxwmybity40c" path="res://Player.tscn" id="3_n7ypv"]
+[ext_resource type="Script" uid="uid://deultc7e6knoa" path="res://laser_gun.gd" id="4_n7ypv"]
+[ext_resource type="Texture2D" uid="uid://brisueveyfs4h" path="res://asset/laser_gun.png" id="5_0s5r2"]
+[ext_resource type="PackedScene" uid="uid://c4e8aejjo5fbw" path="res://borders.tscn" id="6_0s5r2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfcg"]
+size = Vector2(878.5, 32)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Platforms" type="StaticBody2D" parent="."]
+position = Vector2(162, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
+position = Vector2(546, 20)
+shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="ColorRect" type="ColorRect" parent="Platforms"]
+offset_left = 106.0
+offset_top = 4.0
+offset_right = 982.0
+offset_bottom = 36.0
+
+[node name="Platforms2" type="StaticBody2D" parent="."]
+position = Vector2(8, 248)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms2"]
+position = Vector2(433.75, 20)
+shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="ColorRect" type="ColorRect" parent="Platforms2"]
+offset_left = -3.0
+offset_top = 4.0
+offset_right = 873.0
+offset_bottom = 36.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Platforms3" type="StaticBody2D" parent="."]
+position = Vector2(162, 536)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms3"]
+position = Vector2(546, 20)
+shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="ColorRect" type="ColorRect" parent="Platforms3"]
+offset_left = 108.0
+offset_top = 4.0
+offset_right = 984.0
+offset_bottom = 36.0
+
+[node name="Goal" parent="." instance=ExtResource("1_xdadj")]
+position = Vector2(2, 0)
+next_level_path = "res://level_3.tscn"
+
+[node name="Spikes" parent="." instance=ExtResource("2_1y8me")]
+position = Vector2(374, 328)
+rotation = -3.1586
+
+[node name="Spikes2" parent="." instance=ExtResource("2_1y8me")]
+position = Vector2(634, 326)
+rotation = -3.1586
+
+[node name="Spikes4" parent="." instance=ExtResource("2_1y8me")]
+position = Vector2(774, 90)
+rotation = -3.1586
+
+[node name="Spikes3" parent="." instance=ExtResource("2_1y8me")]
+position = Vector2(462, 494)
+
+[node name="Spikes5" parent="." instance=ExtResource("2_1y8me")]
+position = Vector2(386, 204)
+
+[node name="Player" parent="." instance=ExtResource("3_n7ypv")]
+position = Vector2(88, 200)
+
+[node name="LaserGun" type="StaticBody2D" parent="."]
+position = Vector2(0, 1)
+script = ExtResource("4_n7ypv")
+
+[node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
+position = Vector2(1103, 272)
+rotation = -3.1367
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_0s5r2")
+
+[node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun"]
+position = Vector2(1052, 270)
+
+[node name="Borders" parent="." instance=ExtResource("6_0s5r2")]

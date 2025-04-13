@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4e8aejjo5fbw"]
+
+[ext_resource type="Script" uid="uid://b64ba2drk6fd8" path="res://spikes.gd" id="1_nnbri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ypv"]
+size = Vector2(40, 643)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j8ne"]
+size = Vector2(1147, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5r2"]
+size = Vector2(40, 643)
+
+[node name="Borders" type="Area2D"]
+script = ExtResource("1_nnbri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 324.5)
+shape = SubResource("RectangleShape2D_n7ypv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(576.5, -25)
+shape = SubResource("RectangleShape2D_7j8ne")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(1172, 317)
+shape = SubResource("RectangleShape2D_0s5r2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(575, 663)
+shape = SubResource("RectangleShape2D_7j8ne")

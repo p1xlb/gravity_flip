@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://mytww0o8y1hy"]
+
+[ext_resource type="Script" uid="uid://b64ba2drk6fd8" path="res://spikes.gd" id="1_s0g1x"]
+[ext_resource type="Texture2D" uid="uid://dgcxbx4kj8vof" path="res://asset/spike-removebg_.png" id="2_nrdsm"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_s0g1x"]
+points = PackedVector2Array(28, 33, -11, 33, 2, 1)
+
+[node name="Spikes" type="Area2D"]
+script = ExtResource("1_s0g1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.75, 5.5)
+shape = SubResource("ConvexPolygonShape2D_s0g1x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(27.75, 24.5)
+scale = Vector2(0.279891, 0.321429)
+texture = ExtResource("2_nrdsm")
