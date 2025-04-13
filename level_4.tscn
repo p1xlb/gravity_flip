@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://bs7t088wc42pc"]
+
+[ext_resource type="PackedScene" uid="uid://bk3aok2h6le51" path="res://goal.tscn" id="1_aqy51"]
+[ext_resource type="PackedScene" uid="uid://cfxwmybity40c" path="res://Player.tscn" id="3_66w8i"]
+[ext_resource type="Script" uid="uid://deultc7e6knoa" path="res://laser_gun.gd" id="4_80qnk"]
+[ext_resource type="Texture2D" uid="uid://brisueveyfs4h" path="res://asset/laser_gun.png" id="5_cicwn"]
+[ext_resource type="PackedScene" uid="uid://c4e8aejjo5fbw" path="res://borders.tscn" id="6_lj1an"]
+[ext_resource type="Script" uid="uid://fori1ci6cnpo" path="res://moving_platform.gd" id="7_rrs1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5r2"]
+size = Vector2(456.25, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ds5r"]
+size = Vector2(216, 44)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Platforms" type="StaticBody2D" parent="."]
+position = Vector2(202, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
+position = Vector2(295, 44)
+shape = SubResource("RectangleShape2D_0s5r2")
+
+[node name="ColorRect" type="ColorRect" parent="Platforms"]
+offset_left = 68.0
+offset_top = 28.0
+offset_right = 525.0
+offset_bottom = 60.0
+
+[node name="Goal" parent="." instance=ExtResource("1_aqy51")]
+position = Vector2(973, 99)
+
+[node name="Player" parent="." instance=ExtResource("3_66w8i")]
+position = Vector2(206, 389)
+
+[node name="LaserGun" type="StaticBody2D" parent="."]
+position = Vector2(296, 258)
+rotation = -1.57052
+script = ExtResource("4_80qnk")
+
+[node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
+position = Vector2(67.0162, 58.9816)
+rotation = -3.1367
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_cicwn")
+
+[node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun"]
+position = Vector2(-61.1603, -0.989117)
+
+[node name="Borders" parent="." instance=ExtResource("6_lj1an")]
+
+[node name="MovingPlatform" type="AnimatableBody2D" parent="."]
+position = Vector2(-723, -75)
+script = ExtResource("7_rrs1j")
+end_position = Vector2(150, 0)
+travel_time = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform"]
+position = Vector2(1004, 542)
+shape = SubResource("RectangleShape2D_7ds5r")
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform/CollisionShape2D"]
+offset_left = -108.0
+offset_top = -22.0
+offset_right = 108.0
+offset_bottom = 21.0

@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+@export var laserDirection : String = ""
+
 var laser_scene = preload("res://laser.tscn")
 var shoot_timer = 0.0
 var shoot_interval = 1.5  # Shoot every 2.5 seconds
@@ -17,4 +19,17 @@ func shoot_laser():
 	var laser = laser_scene.instantiate()
 	get_parent().add_child(laser)
 	laser.global_position = $LaserSpawnPoint.global_position
-	laser.direction = Vector2.LEFT  # Adjust this based on gun rotation
+	if laserDirection == "LEFT":  # Adjust this based on gun rotation
+		laser.direction = Vector2.LEFT
+	
+	elif laserDirection == "RIGHT":
+		laser.direction = Vector2.RIGHT
+	
+	elif laserDirection == "UP":
+		laser.direction = Vector2.UP
+	
+	elif laserDirection == "DOWN":
+		laser.direction = Vector2.DOWN
+	
+	else:
+		print("Invalid laser direction specified.")
