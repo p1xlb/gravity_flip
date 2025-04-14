@@ -80,6 +80,7 @@ position = Vector2(88, 200)
 [node name="LaserGun" type="StaticBody2D" parent="."]
 position = Vector2(0, 1)
 script = ExtResource("4_n7ypv")
+laserDirection = "LEFT"
 
 [node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
 position = Vector2(1103, 272)

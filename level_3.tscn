@@ -48,6 +48,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Goal" parent="." instance=ExtResource("1_6p2dc")]
 position = Vector2(8, 2)
+next_level_path = "res://level_4.tscn"
 
 [node name="Spikes" parent="." instance=ExtResource("2_fmu3g")]
 position = Vector2(374, 328)
@@ -99,6 +100,7 @@ position = Vector2(88, 200)
 [node name="LaserGun" type="StaticBody2D" parent="."]
 position = Vector2(0, 1)
 script = ExtResource("4_liaj6")
+laserDirection = "LEFT"
 
 [node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
 position = Vector2(1103, 272)

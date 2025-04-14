@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://fori1ci6cnpo" path="res://moving_platform.gd" id="7_rrs1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5r2"]
-size = Vector2(456.25, 33)
+size = Vector2(808.125, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ds5r"]
 size = Vector2(216, 44)
@@ -16,17 +16,17 @@ size = Vector2(216, 44)
 [node name="Level1" type="Node2D"]
 
 [node name="Platforms" type="StaticBody2D" parent="."]
-position = Vector2(202, 37)
+position = Vector2(578, 82)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
-position = Vector2(295, 44)
+position = Vector2(119.062, 44.75)
 shape = SubResource("RectangleShape2D_0s5r2")
 
 [node name="ColorRect" type="ColorRect" parent="Platforms"]
-offset_left = 68.0
+offset_left = -285.0
 offset_top = 28.0
 offset_right = 525.0
-offset_bottom = 60.0
+offset_bottom = 63.0
 
 [node name="Goal" parent="." instance=ExtResource("1_aqy51")]
 position = Vector2(973, 99)
@@ -38,6 +38,7 @@ position = Vector2(206, 389)
 position = Vector2(296, 258)
 rotation = -1.57052
 script = ExtResource("4_80qnk")
+laserDirection = "DOWN"
 
 [node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
 position = Vector2(67.0162, 58.9816)
@@ -46,15 +47,45 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_cicwn")
 
 [node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun"]
-position = Vector2(-61.1603, -0.989117)
+position = Vector2(8.01576, 56.9978)
+
+[node name="LaserGun2" type="StaticBody2D" parent="."]
+position = Vector2(451, 258)
+rotation = -1.57052
+script = ExtResource("4_80qnk")
+laserDirection = "DOWN"
+
+[node name="Sprite2D" type="Sprite2D" parent="LaserGun2"]
+position = Vector2(67.0162, 58.9816)
+rotation = -3.1367
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_cicwn")
+
+[node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun2"]
+position = Vector2(8.01576, 56.9978)
+
+[node name="LaserGun3" type="StaticBody2D" parent="."]
+position = Vector2(603, 258)
+rotation = -1.57052
+script = ExtResource("4_80qnk")
+laserDirection = "DOWN"
+
+[node name="Sprite2D" type="Sprite2D" parent="LaserGun3"]
+position = Vector2(67.0162, 58.9816)
+rotation = -3.1367
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_cicwn")
+
+[node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun3"]
+position = Vector2(8.01576, 56.9978)
 
 [node name="Borders" parent="." instance=ExtResource("6_lj1an")]
 
 [node name="MovingPlatform" type="AnimatableBody2D" parent="."]
 position = Vector2(-723, -75)
 script = ExtResource("7_rrs1j")
-end_position = Vector2(150, 0)
-travel_time = 5.0
+end_position = Vector2(650, 0)
+travel_time = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform"]
 position = Vector2(1004, 542)
