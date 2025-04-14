@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://ygh1gtvvihrn"]
+
+[ext_resource type="PackedScene" uid="uid://bk3aok2h6le51" path="res://goal.tscn" id="1_tac4s"]
+[ext_resource type="PackedScene" uid="uid://cfxwmybity40c" path="res://Player.tscn" id="2_qhsfq"]
+[ext_resource type="Script" uid="uid://deultc7e6knoa" path="res://laser_gun.gd" id="3_kcwpe"]
+[ext_resource type="Texture2D" uid="uid://brwoco02f7tt0" path="res://asset/red_laser.png" id="4_qhsfq"]
+[ext_resource type="PackedScene" uid="uid://c4e8aejjo5fbw" path="res://borders.tscn" id="5_2etst"]
+[ext_resource type="Script" uid="uid://fori1ci6cnpo" path="res://moving_platform.gd" id="6_vw43l"]
+[ext_resource type="PackedScene" uid="uid://mytww0o8y1hy" path="res://spikes.tscn" id="7_qhsfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5r2"]
+size = Vector2(808.125, 34.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhsfq"]
+size = Vector2(548.388, 34.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ds5r"]
+size = Vector2(216, 44)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Platforms" type="StaticBody2D" parent="."]
+position = Vector2(934, 461)
+scale = Vector2(0.413839, 1.03443)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
+position = Vector2(119.062, 44.75)
+shape = SubResource("RectangleShape2D_0s5r2")
+
+[node name="ColorRect" type="ColorRect" parent="Platforms"]
+offset_left = -285.0
+offset_top = 28.0
+offset_right = 525.0
+offset_bottom = 63.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Platforms2" type="StaticBody2D" parent="."]
+position = Vector2(119, 461)
+scale = Vector2(0.413839, 1.03443)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms2"]
+position = Vector2(119.062, 44.75)
+shape = SubResource("RectangleShape2D_0s5r2")
+
+[node name="ColorRect" type="ColorRect" parent="Platforms2"]
+offset_left = -285.0
+offset_top = 28.0
+offset_right = 525.0
+offset_bottom = 63.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Platforms3" type="StaticBody2D" parent="."]
+position = Vector2(527, 253)
+scale = Vector2(0.413839, 1.03443)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms3"]
+position = Vector2(-10.8066, 44.75)
+shape = SubResource("RectangleShape2D_qhsfq")
+
+[node name="ColorRect" type="ColorRect" parent="Platforms3/CollisionShape2D"]
+offset_left = -274.0
+offset_top = -17.0
+offset_right = 275.0
+offset_bottom = 17.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Goal" parent="." instance=ExtResource("1_tac4s")]
+position = Vector2(-11, 119)
+
+[node name="Player" parent="." instance=ExtResource("2_qhsfq")]
+position = Vector2(1091, 433)
+
+[node name="LaserGun" type="StaticBody2D" parent="."]
+position = Vector2(126, 256)
+rotation = -1.57052
+script = ExtResource("3_kcwpe")
+laserDirection = "RIGHT"
+
+[node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
+position = Vector2(-82.0213, -76.9773)
+scale = Vector2(1.76807, 1.81369)
+texture = ExtResource("4_qhsfq")
+
+[node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun"]
+position = Vector2(-75.0077, -27.9793)
+
+[node name="Borders" parent="." instance=ExtResource("5_2etst")]
+
+[node name="MovingPlatform" type="AnimatableBody2D" parent="."]
+position = Vector2(-723, -75)
+script = ExtResource("6_vw43l")
+end_position = Vector2(-260, 0)
+travel_time = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform"]
+position = Vector2(1428, 587)
+shape = SubResource("RectangleShape2D_7ds5r")
+
+[node name="ColorRect" type="ColorRect" parent="MovingPlatform/CollisionShape2D"]
+offset_left = -108.0
+offset_top = -22.0
+offset_right = 108.0
+offset_bottom = 21.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Spikes" parent="." instance=ExtResource("7_qhsfq")]
+position = Vector2(348, 437)
+rotation = -0.435232
+
+[node name="Spikes2" parent="." instance=ExtResource("7_qhsfq")]
+position = Vector2(652, 437)
+rotation = -0.435232

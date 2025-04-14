@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bk3aok2h6le51" path="res://goal.tscn" id="1_aqy51"]
 [ext_resource type="PackedScene" uid="uid://cfxwmybity40c" path="res://Player.tscn" id="3_66w8i"]
 [ext_resource type="Script" uid="uid://deultc7e6knoa" path="res://laser_gun.gd" id="4_80qnk"]
-[ext_resource type="Texture2D" uid="uid://brisueveyfs4h" path="res://asset/laser_gun.png" id="5_cicwn"]
+[ext_resource type="Texture2D" uid="uid://brwoco02f7tt0" path="res://asset/red_laser.png" id="4_c8stx"]
 [ext_resource type="PackedScene" uid="uid://c4e8aejjo5fbw" path="res://borders.tscn" id="6_lj1an"]
 [ext_resource type="Script" uid="uid://fori1ci6cnpo" path="res://moving_platform.gd" id="7_rrs1j"]
 
@@ -30,6 +30,7 @@ offset_bottom = 63.0
 
 [node name="Goal" parent="." instance=ExtResource("1_aqy51")]
 position = Vector2(973, 99)
+next_level_path = "res://level_5.tscn"
 
 [node name="Player" parent="." instance=ExtResource("3_66w8i")]
 position = Vector2(206, 389)
@@ -40,14 +41,14 @@ rotation = -1.57052
 script = ExtResource("4_80qnk")
 laserDirection = "DOWN"
 
-[node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
-position = Vector2(67.0162, 58.9816)
-rotation = -3.1367
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_cicwn")
-
 [node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun"]
-position = Vector2(8.01576, 56.9978)
+position = Vector2(20.0158, 56.9945)
+
+[node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
+position = Vector2(67.0174, 62.9815)
+rotation = 1.5708
+scale = Vector2(1.76807, 1.81369)
+texture = ExtResource("4_c8stx")
 
 [node name="LaserGun2" type="StaticBody2D" parent="."]
 position = Vector2(451, 258)
@@ -55,14 +56,14 @@ rotation = -1.57052
 script = ExtResource("4_80qnk")
 laserDirection = "DOWN"
 
-[node name="Sprite2D" type="Sprite2D" parent="LaserGun2"]
-position = Vector2(67.0162, 58.9816)
-rotation = -3.1367
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_cicwn")
-
 [node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun2"]
-position = Vector2(8.01576, 56.9978)
+position = Vector2(20.0158, 56.9945)
+
+[node name="Sprite2D2" type="Sprite2D" parent="LaserGun2"]
+position = Vector2(65.9918, 62.9817)
+rotation = 1.5708
+scale = Vector2(1.76807, 1.81369)
+texture = ExtResource("4_c8stx")
 
 [node name="LaserGun3" type="StaticBody2D" parent="."]
 position = Vector2(603, 258)
@@ -70,14 +71,14 @@ rotation = -1.57052
 script = ExtResource("4_80qnk")
 laserDirection = "DOWN"
 
-[node name="Sprite2D" type="Sprite2D" parent="LaserGun3"]
-position = Vector2(67.0162, 58.9816)
-rotation = -3.1367
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_cicwn")
-
 [node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun3"]
-position = Vector2(8.01576, 56.9978)
+position = Vector2(20.0158, 56.9945)
+
+[node name="Sprite2D2" type="Sprite2D" parent="LaserGun3"]
+position = Vector2(65.9918, 62.9817)
+rotation = 1.5708
+scale = Vector2(1.76807, 1.81369)
+texture = ExtResource("4_c8stx")
 
 [node name="Borders" parent="." instance=ExtResource("6_lj1an")]
 

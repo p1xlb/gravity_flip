@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://to856bsclw26"]
+[gd_scene load_steps=6 format=3 uid="uid://to856bsclw26"]
 
 [ext_resource type="PackedScene" uid="uid://cfxwmybity40c" path="res://Player.tscn" id="1_hbghi"]
 [ext_resource type="PackedScene" uid="uid://bk3aok2h6le51" path="res://goal.tscn" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://mytww0o8y1hy" path="res://spikes.tscn" id="3_hn12h"]
+[ext_resource type="PackedScene" uid="uid://c4e8aejjo5fbw" path="res://borders.tscn" id="4_ihfcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfcg"]
 size = Vector2(878.5, 32)
@@ -72,3 +73,5 @@ position = Vector2(386, 204)
 
 [node name="Player" parent="." instance=ExtResource("1_hbghi")]
 position = Vector2(88, 200)
+
+[node name="Borders" parent="." instance=ExtResource("4_ihfcg")]

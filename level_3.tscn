@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mytww0o8y1hy" path="res://spikes.tscn" id="2_fmu3g"]
 [ext_resource type="PackedScene" uid="uid://cfxwmybity40c" path="res://Player.tscn" id="3_7ds5r"]
 [ext_resource type="Script" uid="uid://deultc7e6knoa" path="res://laser_gun.gd" id="4_liaj6"]
-[ext_resource type="Texture2D" uid="uid://brisueveyfs4h" path="res://asset/laser_gun.png" id="5_b60u5"]
+[ext_resource type="Texture2D" uid="uid://brwoco02f7tt0" path="res://asset/red_laser.png" id="5_fmu3g"]
 [ext_resource type="PackedScene" uid="uid://c4e8aejjo5fbw" path="res://borders.tscn" id="6_kmy7e"]
 [ext_resource type="Script" uid="uid://fori1ci6cnpo" path="res://moving_platform.gd" id="7_fmu3g"]
 
@@ -103,13 +103,13 @@ script = ExtResource("4_liaj6")
 laserDirection = "LEFT"
 
 [node name="Sprite2D" type="Sprite2D" parent="LaserGun"]
-position = Vector2(1103, 272)
-rotation = -3.1367
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_b60u5")
+position = Vector2(1104, 271)
+rotation = 1.5708
+scale = Vector2(1.76807, 1.81369)
+texture = ExtResource("5_fmu3g")
 
 [node name="LaserSpawnPoint" type="Marker2D" parent="LaserGun"]
-position = Vector2(1052, 270)
+position = Vector2(1052, 263)
 
 [node name="Borders" parent="." instance=ExtResource("6_kmy7e")]
 
