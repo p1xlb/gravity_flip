@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7remmxqfeu8t"]
+
+[ext_resource type="Texture2D" uid="uid://cjgpq7383jq55" path="res://asset/sci_fi_bg1.jpg" id="1_ots34"]
+[ext_resource type="Script" uid="uid://col2edn5ps1iq" path="res://start.gd" id="2_qn1rc"]
+
+[node name="Start" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2313.0
+offset_bottom = 1300.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ots34")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 352.0
+offset_top = 169.0
+offset_right = 862.0
+offset_bottom = 449.0
+theme_override_font_sizes/normal_font_size = 51
+text = "Gravity FLIP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 507.0
+offset_top = 371.0
+offset_right = 699.0
+offset_bottom = 437.0
+text = "START"
+script = ExtResource("2_qn1rc")
+
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

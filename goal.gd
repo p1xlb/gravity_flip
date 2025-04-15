@@ -20,4 +20,8 @@ func _on_body_entered(body):
 			get_tree().change_scene_to_file(next_level_path)
 		else:
 			# If no next level is specified, just print a completion message
+			get_tree().paused = true
 			print("Game Complete! No more levels.")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://end.tscn")

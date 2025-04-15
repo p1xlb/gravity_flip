@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="idk mane"
-run/main_scene="uid://to856bsclw26"
+run/main_scene="uid://b7remmxqfeu8t"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

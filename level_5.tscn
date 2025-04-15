@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://ygh1gtvvihrn"]
+[gd_scene load_steps=12 format=3 uid="uid://ygh1gtvvihrn"]
 
+[ext_resource type="Texture2D" uid="uid://cjgpq7383jq55" path="res://asset/sci_fi_bg1.jpg" id="1_kcwpe"]
 [ext_resource type="PackedScene" uid="uid://bk3aok2h6le51" path="res://goal.tscn" id="1_tac4s"]
 [ext_resource type="PackedScene" uid="uid://cfxwmybity40c" path="res://Player.tscn" id="2_qhsfq"]
 [ext_resource type="Script" uid="uid://deultc7e6knoa" path="res://laser_gun.gd" id="3_kcwpe"]
@@ -18,6 +19,13 @@ size = Vector2(548.388, 34.5)
 size = Vector2(216, 44)
 
 [node name="Level1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 9.0
+offset_right = 2293.0
+offset_bottom = 1282.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kcwpe")
 
 [node name="Platforms" type="StaticBody2D" parent="."]
 position = Vector2(934, 461)

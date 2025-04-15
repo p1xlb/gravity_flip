@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjxtnthu8xp1j"]
+[gd_scene load_steps=9 format=3 uid="uid://cjxtnthu8xp1j"]
 
+[ext_resource type="Texture2D" uid="uid://cjgpq7383jq55" path="res://asset/sci_fi_bg1.jpg" id="1_7j8ne"]
 [ext_resource type="PackedScene" uid="uid://bk3aok2h6le51" path="res://goal.tscn" id="1_xdadj"]
 [ext_resource type="PackedScene" uid="uid://mytww0o8y1hy" path="res://spikes.tscn" id="2_1y8me"]
 [ext_resource type="PackedScene" uid="uid://cfxwmybity40c" path="res://Player.tscn" id="3_n7ypv"]
@@ -11,6 +12,14 @@
 size = Vector2(878.5, 32)
 
 [node name="Level1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = -11.0
+offset_right = 2304.0
+offset_bottom = 1279.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7j8ne")
 
 [node name="Platforms" type="StaticBody2D" parent="."]
 position = Vector2(162, 10)
@@ -92,3 +101,4 @@ texture = ExtResource("5_0s5r2")
 position = Vector2(1052, 264)
 
 [node name="Borders" parent="." instance=ExtResource("6_0s5r2")]
+position = Vector2(0, -11)
